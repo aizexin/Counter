@@ -11,39 +11,26 @@ import ReactorKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController,StoryboardView {
-    var disposeBag = DisposeBag()
-    
-    typealias Reactor = ViewReactor
+class ViewController: UIViewController,ViewProtocol {
 
+    var presenter : PresenterProtocol?
+    
     @IBOutlet weak var decreaseButton: UIButton!
-    @IBOutlet weak var increaseButton: UIButton!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var increaseButton: UIButton?
+    @IBOutlet weak var label: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        DISPATCH_ONCE_INLINE_FASTPATH
-//        self.reactor = ViewReactor()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.white
+        presenter?.setReactor(reactor: Interactor())
     }
     
-    func bind(reactor: ViewController.Reactor) {
-        increaseButton.rx.tap
-            .map { Reactor.Action.increase }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        decreaseButton.rx.tap
-            .map { Reactor.Action.decrease}
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        //State -->bind  View
-        reactor.state.map {
-            $0.value
-        }.map{ "\($0)"}
-        .bind(to: label.rx.text)
-        .disposed(by: disposeBag)
+    //viewprotocol
+    func getincreaseTap() -> ControlEvent<Void>?  {
+        return increaseButton?.rx.tap
+    }
+    func getLabelText() -> Binder<String?>? {
+        return label?.rx.text
     }
 }
 

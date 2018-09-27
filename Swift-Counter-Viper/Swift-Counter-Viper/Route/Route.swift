@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  Route.swift
 //  Swift-Counter-Viper
 //
 //  Created by 艾泽鑫 on 2018/9/27.
@@ -8,14 +8,8 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+class Route: NSObject,RouteProtocol {
+    func showVC() -> Void {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         
         let view       = storyBoard.instantiateInitialViewController() as! ViewController
@@ -27,12 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         view.presenter       = presenter
         interactor.presenter = presenter
         
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.backgroundColor    = UIColor.white
-        window?.rootViewController = view
-        window?.makeKeyAndVisible()
-        return true
+        let window = UIWindow.init(frame: UIScreen.main.bounds)
+        window.backgroundColor    = UIColor.white
+        window.rootViewController = view
+        window.makeKeyAndVisible()
     }
-
 }
-

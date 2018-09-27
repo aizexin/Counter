@@ -1,5 +1,5 @@
 //
-//  ViewReactor.swift
+//  Interactor.swift
 //  Swift-Counter-Viper
 //
 //  Created by 艾泽鑫 on 2018/9/27.
@@ -11,8 +11,10 @@ import ReactorKit
 import Then
 import RxSwift
 
-class ViewReactor: Reactor {
-    var initialState: ViewReactor.State
+class Interactor: NSObject,InteractorProtocol, Reactor {
+    var initialState: Interactor.State
+    
+    var presenter: PresenterProtocol?
     
     //这里属于view
     enum Action {
@@ -24,17 +26,16 @@ class ViewReactor: Reactor {
     enum Mutation {
         case increaseValue
         case decreaseValue
-        
     }
     struct State {
         var value : Int
     }
     
-    init() {
+    override init() {
         self.initialState = State(value: 0)
     }
     
-    func mutate(action: ViewReactor.Action) -> Observable<Mutation> {
+    func mutate(action: Interactor.Action) -> Observable<Mutation> {
         //action 分类
         switch action {
         case .increase:
@@ -48,7 +49,7 @@ class ViewReactor: Reactor {
         }
     }
     
-    func reduce(state: ViewReactor.State, mutation: ViewReactor.Mutation) -> ViewReactor.State {
+    func reduce(state: Interactor.State, mutation: Interactor.Mutation) -> Interactor.State {
         //改变数据
         var state = state
         switch mutation {
