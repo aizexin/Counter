@@ -14,6 +14,7 @@
 		45D5003A215C7DF00028A8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D50038215C7DF00028A8F1 /* LaunchScreen.storyboard */; };
 		45D50045215C7DF10028A8F1 /* Swift_Counter_ViperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D50044215C7DF10028A8F1 /* Swift_Counter_ViperTests.swift */; };
 		45D50050215C7DF10028A8F1 /* Swift_Counter_ViperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5004F215C7DF10028A8F1 /* Swift_Counter_ViperUITests.swift */; };
+		45D50063215C80B80028A8F1 /* ViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D50062215C80B80028A8F1 /* ViewReactor.swift */; };
 		F56E6AA140A6C7D877B08641 /* Pods_Swift_Counter_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		45D5004B215C7DF10028A8F1 /* Swift-Counter-ViperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Counter-ViperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D5004F215C7DF10028A8F1 /* Swift_Counter_ViperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Counter_ViperUITests.swift; sourceTree = "<group>"; };
 		45D50051215C7DF10028A8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45D50062215C80B80028A8F1 /* ViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReactor.swift; sourceTree = "<group>"; };
 		96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Counter_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F386AB513DF2A517700B9E1 /* Pods-Swift-Counter-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Counter-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Counter-Viper/Pods-Swift-Counter-Viper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +112,6 @@
 				45D5005D215C7E0A0028A8F1 /* Route */,
 				45D5005E215C7E0A0028A8F1 /* View */,
 				45D5002F215C7DF00028A8F1 /* AppDelegate.swift */,
-				45D50031215C7DF00028A8F1 /* ViewController.swift */,
 				45D50033215C7DF00028A8F1 /* Main.storyboard */,
 				45D50036215C7DF00028A8F1 /* Assets.xcassets */,
 				45D50038215C7DF00028A8F1 /* LaunchScreen.storyboard */,
@@ -147,6 +148,8 @@
 		45D5005E215C7E0A0028A8F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				45D50031215C7DF00028A8F1 /* ViewController.swift */,
+				45D50062215C80B80028A8F1 /* ViewReactor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D50032215C7DF00028A8F1 /* ViewController.swift in Sources */,
+				45D50063215C80B80028A8F1 /* ViewReactor.swift in Sources */,
 				45D50030215C7DF00028A8F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
