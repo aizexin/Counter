@@ -1,0 +1,11 @@
+platform :ios, '10.0'
+
+target ‘Swift-Counter-Viper’ do
+    inhibit_all_warnings! #禁止所有警告
+    use_frameworks!
+    pod 'SnapKit', git: 'https://github.com/SnapKit/SnapKit', branch: 'develop'  #约束
+    pod 'ReactorKit'
+    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'develop'
+    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'develop'
+    pod 'Then'
+end
