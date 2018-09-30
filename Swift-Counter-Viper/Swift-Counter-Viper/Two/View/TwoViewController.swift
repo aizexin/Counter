@@ -43,15 +43,13 @@ class TwoViewController: UIViewController ,View{
         disMissButton = UIButton(type: .custom).then({ (btn) in
             btn.setTitle("dismiss", for: .normal)
             btn.backgroundColor = UIColor.orange
-            btn.frame = CGRect.init(x: 0, y: 0, width: 50, height: 50)
+            btn.frame = CGRect.init(x: 0, y: 100, width: 50, height: 50)
             btn.rx.tap.asControlEvent().bind(onNext: {
                 self.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
         })
         view.addSubview(disMissButton)
-        
-        
-        
+
         let cellModel1  = AICellModel(content: "1111")
         let cellModel2  = AICellModel(content: "2222")
         let cellModel3  = AICellModel(content: "3333")
@@ -61,9 +59,8 @@ class TwoViewController: UIViewController ,View{
             AISectionModel(name: "2", content: "xxxxxx", cellList: [cellModel2]),
             AISectionModel(name: "3", content: "xxxxxx", cellList: [cellModel3])
             ]
-        
-        Observable.just(listArray).bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        
+        sections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        sections.onNext(listArray)
     }
     
     func bind(reactor: TwoListViewReactor) {
