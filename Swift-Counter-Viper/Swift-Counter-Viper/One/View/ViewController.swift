@@ -22,7 +22,10 @@ class ViewController: UIViewController,ViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        presenter?.setReactor(reactor: Interactor())
+        let  interactor = Interactor()
+        interactor.presenter = presenter
+        
+        presenter?.setReactor(reactor: interactor)
     }
     
     //viewprotocol

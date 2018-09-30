@@ -8,4 +8,5 @@ target ‘Swift-Counter-Viper’ do
     pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'develop'
     pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'develop'
     pod 'Then'
+    pod 'RxDataSources'
 end

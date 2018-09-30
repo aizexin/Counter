@@ -20,6 +20,7 @@ class Interactor: NSObject,InteractorProtocol, Reactor {
     enum Action {
         case increase
         case decrease
+        
     }
     
     //操作数据的 应该分在interactor
@@ -34,6 +35,7 @@ class Interactor: NSObject,InteractorProtocol, Reactor {
     override init() {
         self.initialState = State(value: 0)
     }
+
     
     func mutate(action: Interactor.Action) -> Observable<Mutation> {
         //action 分类
@@ -52,6 +54,10 @@ class Interactor: NSObject,InteractorProtocol, Reactor {
     func reduce(state: Interactor.State, mutation: Interactor.Mutation) -> Interactor.State {
         //改变数据
         var state = state
+        if state.value > 10 {
+            presenter?.presntenTwo()
+            return state
+        }
         switch mutation {
         case .increaseValue:
             state.value += 1
@@ -60,6 +66,7 @@ class Interactor: NSObject,InteractorProtocol, Reactor {
             state.value -= 1
             break
         }
+        
         return state
     }
 }

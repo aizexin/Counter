@@ -1,5 +1,5 @@
 //
-//  PresenterProtocol.swift
+//  RouteProtocol.swift
 //  Swift-Counter-Viper
 //
 //  Created by 艾泽鑫 on 2018/9/27.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ReactorKit
-protocol PresenterProtocol: class {
-    func setReactor<T>(reactor :T)
+
+protocol RouteProtocol {
+    func presntenTwo(fromVC: UIViewController) -> Void
 }

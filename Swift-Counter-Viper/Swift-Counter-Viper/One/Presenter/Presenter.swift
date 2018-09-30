@@ -14,6 +14,7 @@ class Presenter: NSObject,PresenterProtocol,StoryboardView {
     
     weak var view  : ViewProtocol?
     var interactor : InteractorProtocol?
+    var route      : RouteProtocol?
     
     var disposeBag = DisposeBag()
     
@@ -37,5 +38,9 @@ class Presenter: NSObject,PresenterProtocol,StoryboardView {
     
     func setReactor<T>(reactor: T) {
         self.reactor = reactor as? Presenter.Reactor
+    }
+    
+    func presntenTwo() {
+        route?.presntenTwo(fromVC: view as! UIViewController)
     }
 }
