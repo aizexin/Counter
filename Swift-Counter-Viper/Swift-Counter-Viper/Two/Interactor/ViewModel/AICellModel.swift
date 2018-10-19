@@ -10,8 +10,12 @@ import UIKit
 
 class AICellModel: NSObject {
     var content: String!
-    convenience init(content: String) {
+    var userName: String!
+    var userID  : Int!
+    convenience init(content: String,userName: String = "", userID :Int = 0) {
         self.init()
         self.content = content
+        self.userName = userName
+        self.userID  = userID
     }
 }

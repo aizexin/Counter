@@ -26,10 +26,15 @@
 		45D5007E216090E10028A8F1 /* TwoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5007D216090E10028A8F1 /* TwoPresenter.swift */; };
 		45D50080216090EF0028A8F1 /* TwoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5007F216090EF0028A8F1 /* TwoEntity.swift */; };
 		45D500822160910D0028A8F1 /* TwoRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500812160910D0028A8F1 /* TwoRoute.swift */; };
-		45D500842160A4D80028A8F1 /* TwoListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500832160A4D80028A8F1 /* TwoListViewReactor.swift */; };
 		45D500862160AA6F0028A8F1 /* AISectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500852160AA6F0028A8F1 /* AISectionModel.swift */; };
 		45D500882160AA780028A8F1 /* AICellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500872160AA780028A8F1 /* AICellModel.swift */; };
 		45D5008A2160AB720028A8F1 /* AITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500892160AB720028A8F1 /* AITableViewCell.swift */; };
+		45D5008C2179DB870028A8F1 /* TwoPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5008B2179DB870028A8F1 /* TwoPresenterProtocol.swift */; };
+		45D500902179DE030028A8F1 /* AITwoRemoteSeverice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5008F2179DE030028A8F1 /* AITwoRemoteSeverice.swift */; };
+		45D500932179F42D0028A8F1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500922179F42D0028A8F1 /* AppState.swift */; };
+		45D500962179F4BF0028A8F1 /* TwoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500952179F4BF0028A8F1 /* TwoReducer.swift */; };
+		45D500992179F6B40028A8F1 /* TwoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500982179F6B40028A8F1 /* TwoAction.swift */; };
+		45D5009B2179FB400028A8F1 /* CommentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5009A2179FB400028A8F1 /* CommentAction.swift */; };
 		F56E6AA140A6C7D877B08641 /* Pods_Swift_Counter_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,10 +82,15 @@
 		45D5007D216090E10028A8F1 /* TwoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPresenter.swift; sourceTree = "<group>"; };
 		45D5007F216090EF0028A8F1 /* TwoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEntity.swift; sourceTree = "<group>"; };
 		45D500812160910D0028A8F1 /* TwoRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRoute.swift; sourceTree = "<group>"; };
-		45D500832160A4D80028A8F1 /* TwoListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoListViewReactor.swift; sourceTree = "<group>"; };
 		45D500852160AA6F0028A8F1 /* AISectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISectionModel.swift; sourceTree = "<group>"; };
 		45D500872160AA780028A8F1 /* AICellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICellModel.swift; sourceTree = "<group>"; };
 		45D500892160AB720028A8F1 /* AITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITableViewCell.swift; sourceTree = "<group>"; };
+		45D5008B2179DB870028A8F1 /* TwoPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPresenterProtocol.swift; sourceTree = "<group>"; };
+		45D5008F2179DE030028A8F1 /* AITwoRemoteSeverice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITwoRemoteSeverice.swift; sourceTree = "<group>"; };
+		45D500922179F42D0028A8F1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		45D500952179F4BF0028A8F1 /* TwoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoReducer.swift; sourceTree = "<group>"; };
+		45D500982179F6B40028A8F1 /* TwoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAction.swift; sourceTree = "<group>"; };
+		45D5009A2179FB400028A8F1 /* CommentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAction.swift; sourceTree = "<group>"; };
 		96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Counter_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F386AB513DF2A517700B9E1 /* Pods-Swift-Counter-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Counter-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Counter-Viper/Pods-Swift-Counter-Viper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,8 +254,12 @@
 		45D50075216090670028A8F1 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				45D500972179F69E0028A8F1 /* Action */,
+				45D500942179F4960028A8F1 /* Reducers */,
+				45D500912179F4190028A8F1 /* State */,
+				45D5008E2179DDA70028A8F1 /* NewWork */,
+				45D5008D2179DC3F0028A8F1 /* ViewModel */,
 				45D5007B216090D00028A8F1 /* TwoInteractor.swift */,
-				45D500832160A4D80028A8F1 /* TwoListViewReactor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -254,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				45D5007D216090E10028A8F1 /* TwoPresenter.swift */,
+				45D5008B2179DB870028A8F1 /* TwoPresenterProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -262,8 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				45D5007F216090EF0028A8F1 /* TwoEntity.swift */,
-				45D500852160AA6F0028A8F1 /* AISectionModel.swift */,
-				45D500872160AA780028A8F1 /* AICellModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -274,6 +287,48 @@
 				45D500812160910D0028A8F1 /* TwoRoute.swift */,
 			);
 			path = Route;
+			sourceTree = "<group>";
+		};
+		45D5008D2179DC3F0028A8F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				45D500852160AA6F0028A8F1 /* AISectionModel.swift */,
+				45D500872160AA780028A8F1 /* AICellModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		45D5008E2179DDA70028A8F1 /* NewWork */ = {
+			isa = PBXGroup;
+			children = (
+				45D5008F2179DE030028A8F1 /* AITwoRemoteSeverice.swift */,
+			);
+			path = NewWork;
+			sourceTree = "<group>";
+		};
+		45D500912179F4190028A8F1 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				45D500922179F42D0028A8F1 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		45D500942179F4960028A8F1 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				45D500952179F4BF0028A8F1 /* TwoReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		45D500972179F69E0028A8F1 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				45D500982179F6B40028A8F1 /* TwoAction.swift */,
+				45D5009A2179FB400028A8F1 /* CommentAction.swift */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 		9CCAA5097151F6E0B7870E12 /* Frameworks */ = {
@@ -448,20 +503,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swift-Counter-Viper/Pods-Swift-Counter-Viper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
@@ -487,13 +546,18 @@
 				45D50069215CA7C80028A8F1 /* Route.swift in Sources */,
 				45D5006D215CA8110028A8F1 /* PresenterProtocol.swift in Sources */,
 				45D5008A2160AB720028A8F1 /* AITableViewCell.swift in Sources */,
-				45D500842160A4D80028A8F1 /* TwoListViewReactor.swift in Sources */,
+				45D500962179F4BF0028A8F1 /* TwoReducer.swift in Sources */,
 				45D500822160910D0028A8F1 /* TwoRoute.swift in Sources */,
+				45D500932179F42D0028A8F1 /* AppState.swift in Sources */,
 				45D5007A216090BD0028A8F1 /* TwoViewController.swift in Sources */,
+				45D5008C2179DB870028A8F1 /* TwoPresenterProtocol.swift in Sources */,
+				45D500902179DE030028A8F1 /* AITwoRemoteSeverice.swift in Sources */,
 				45D5006F215CA8300028A8F1 /* InteractorProtocol.swift in Sources */,
 				45D5006B215CA7DB0028A8F1 /* ViewProtocol.swift in Sources */,
 				45D50030215C7DF00028A8F1 /* AppDelegate.swift in Sources */,
 				45D50067215CA7C20028A8F1 /* Presenter.swift in Sources */,
+				45D500992179F6B40028A8F1 /* TwoAction.swift in Sources */,
+				45D5009B2179FB400028A8F1 /* CommentAction.swift in Sources */,
 				45D500882160AA780028A8F1 /* AICellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

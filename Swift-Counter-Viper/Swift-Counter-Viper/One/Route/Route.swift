@@ -11,6 +11,8 @@ import UIKit
 class Route: NSObject,RouteProtocol {
     func presntenTwo(fromVC: UIViewController) {
         let twoVC = TwoViewController()
+//        let presenter = TwoPresenter()
+//        twoVC.reactor = presenter
         fromVC.present(twoVC, animated: true, completion: nil)
     }
     

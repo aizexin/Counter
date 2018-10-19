@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ReSwift
+
+let mainStore = Store<AppState>(reducer: twoReducer, state: AppState())
 
 class TwoRoute: NSObject {
 

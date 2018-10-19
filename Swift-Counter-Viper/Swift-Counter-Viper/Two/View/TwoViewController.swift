@@ -11,13 +11,13 @@ import RxCocoa
 import RxSwift
 import ReactorKit
 import RxDataSources
-
+import RxViewController
 typealias ListModel = SectionModel<AISectionModel,AICellModel>
 class TwoViewController: UIViewController ,View{
     
     var disposeBag = DisposeBag()
 
-    typealias Reactor = TwoListViewReactor
+    typealias Reactor = TwoPresenter
 
     var disMissButton: UIButton!
     var tableView    : UITableView!
@@ -49,21 +49,17 @@ class TwoViewController: UIViewController ,View{
             }).disposed(by: disposeBag)
         })
         view.addSubview(disMissButton)
-
-        let cellModel1  = AICellModel(content: "1111")
-        let cellModel2  = AICellModel(content: "2222")
-        let cellModel3  = AICellModel(content: "3333")
         
-        let listArray : [AISectionModel]   = [
-            AISectionModel(name: "1", content: "xxxxxx", cellList: [cellModel1]),
-            AISectionModel(name: "2", content: "xxxxxx", cellList: [cellModel2]),
-            AISectionModel(name: "3", content: "xxxxxx", cellList: [cellModel3])
-            ]
-        sections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        sections.onNext(listArray)
+        self.reactor = TwoPresenter()
     }
     
-    func bind(reactor: TwoListViewReactor) {
-//        reactor.state.bind(to: tableView.rx.items(dataSource: self.dataSource))
+    func bind(reactor: TwoPresenter) {
+        self.rx.viewWillAppear.map { (_) -> TwoPresenter.Action in
+            return .callloaddata
+        }.bind(to: reactor.action)
+        .disposed(by: disposeBag)
+        //state-->View
+        reactor.state.bind(to: tableView.rx.items(dataSource: self.dataSource))
+        .disposed(by: disposeBag)
     }
 }
