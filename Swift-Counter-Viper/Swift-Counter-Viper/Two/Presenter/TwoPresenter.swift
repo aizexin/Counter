@@ -12,12 +12,13 @@ import RxCocoa
 import RxSwift
 import ReSwift
 
-class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
+class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor {
     
     var initialState: [AISectionModel]
     typealias Action = TwoAction
     typealias State = [AISectionModel]
     
+    let loadSuccess = PublishSubject<TwoAction>()
     enum TwoAction {
         case callloaddata
         case loadDataSuccess(list: [AISectionModel])
@@ -31,27 +32,20 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
     convenience init(state: [AISectionModel]) {
         self.init()
         self.initialState = state
-        mainStore.subscribe(self)
-    }
-    
-    deinit {
-        mainStore.unsubscribe(self)
     }
     
     func reduce(state: [AISectionModel], mutation: TwoPresenter.TwoAction) -> [AISectionModel] {
+        var state = state
         switch mutation {
         case .callloaddata:
+            
             AITwoRemoteSeverice.loadData()
             break
-        case .loadDataSuccess:
+        case .loadDataSuccess(let list):
+            state = list
             break
         }
         return state
-    }
-    
-    func newState(state: AppState) {
-        let loadSuccess = PublishSubject<TwoAction>()
-        loadSuccess.onNext(.loadDataSuccess(list: state.sectionList))
     }
 
 }

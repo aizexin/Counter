@@ -12,8 +12,9 @@ import RxSwift
 import ReactorKit
 import RxDataSources
 import RxViewController
+import ReSwift
 typealias ListModel = SectionModel<AISectionModel,AICellModel>
-class TwoViewController: UIViewController ,View{
+class TwoViewController: UIViewController ,View,StoreSubscriber {
     
     var disposeBag = DisposeBag()
 
@@ -35,6 +36,7 @@ class TwoViewController: UIViewController ,View{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainStore.subscribe(self)
         
         tableView = UITableView.init(frame: view.bounds, style: .grouped)
         tableView.register(AITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -44,9 +46,6 @@ class TwoViewController: UIViewController ,View{
             btn.setTitle("dismiss", for: .normal)
             btn.backgroundColor = UIColor.orange
             btn.frame = CGRect.init(x: 0, y: 100, width: 50, height: 50)
-            btn.rx.tap.asControlEvent().bind(onNext: {
-                self.dismiss(animated: true, completion: nil)
-            }).disposed(by: disposeBag)
         })
         view.addSubview(disMissButton)
         
@@ -54,6 +53,12 @@ class TwoViewController: UIViewController ,View{
     }
     
     func bind(reactor: TwoPresenter) {
+        
+        disMissButton.rx.tap.asControlEvent().bind(onNext: {
+            print("dissmiss")
+            self.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposeBag)
+        
         self.rx.viewWillAppear.map { (_) -> TwoPresenter.Action in
             return .callloaddata
         }.bind(to: reactor.action)
@@ -61,5 +66,9 @@ class TwoViewController: UIViewController ,View{
         //state-->View
         reactor.state.bind(to: tableView.rx.items(dataSource: self.dataSource))
         .disposed(by: disposeBag)
+    }
+    
+    func newState(state: AppState) {
+        print("count ==\(state.sectionList.count)")
     }
 }

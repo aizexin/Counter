@@ -10,14 +10,16 @@ import UIKit
 import ReSwift
 
 func twoReducer(action: Action, state: AppState?) -> AppState {
-    let stateM = state ?? AppState()
+    var stateM = state ?? AppState()
     switch action {
     case let twoAction as TwoLoadDataAction:
         switch twoAction.result {
         case let .success(list):
             stateM.sectionList = list
             break
-        case .loading: break
+        case .loading:
+            print("loading......")
+            break
         case .failure(_): break
         }
     default:

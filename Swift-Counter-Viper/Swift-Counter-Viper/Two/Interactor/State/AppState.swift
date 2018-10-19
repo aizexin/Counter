@@ -8,6 +8,6 @@
 
 import UIKit
 import ReSwift
-class AppState: NSObject,StateType {
+struct AppState: StateType {
     var sectionList = [AISectionModel]()
 }
