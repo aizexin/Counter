@@ -17,8 +17,9 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
     var initialState: [AISectionModel]
     typealias Action = TwoAction
     typealias State = [AISectionModel]
-    let loadSuccess = PublishSubject<TwoAction>()
-    let dispose = DisposeBag()
+    
+    private let dispose = DisposeBag()
+    private let loadSuccess = PublishSubject<TwoAction>()
     
     enum TwoAction {
         case callloaddata
@@ -38,8 +39,10 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
         
         switch mutation {
         case .callloaddata:
+            //这里用route添加HUD
             AITwoRemoteSeverice.loadData()
         case .loadDataSuccess(let list):
+            //route 隐藏HUD
             state = list
             break
         }

@@ -37,7 +37,6 @@ class TwoViewController: UIViewController ,View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView = UITableView.init(frame: view.bounds, style: .grouped)
         tableView.register(AITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
@@ -66,9 +65,5 @@ class TwoViewController: UIViewController ,View {
         //state-->View
         reactor.state.bind(to: tableView.rx.items(dataSource: self.dataSource))
         .disposed(by: disposeBag)
-        
-        reactor.loadSuccess.subscribe(onNext: { (_) in
-            print("请求结束")
-        }).disposed(by: disposeBag)
     }
 }
