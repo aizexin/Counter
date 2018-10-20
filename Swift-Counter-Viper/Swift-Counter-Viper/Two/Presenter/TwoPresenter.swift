@@ -33,6 +33,10 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
 
         mainStore.subscribe(self)
     }
+    
+    deinit {
+        mainStore.unsubscribe(self)
+    }
 
     func reduce(state: [AISectionModel], mutation: TwoPresenter.TwoAction) -> [AISectionModel] {
         var state = state
