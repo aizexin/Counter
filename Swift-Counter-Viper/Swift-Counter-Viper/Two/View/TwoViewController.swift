@@ -14,7 +14,7 @@ import RxDataSources
 import RxViewController
 import ReSwift
 typealias ListModel = SectionModel<AISectionModel,AICellModel>
-class TwoViewController: UIViewController ,View,StoreSubscriber {
+class TwoViewController: UIViewController ,View {
     
     var disposeBag = DisposeBag()
 
@@ -36,7 +36,7 @@ class TwoViewController: UIViewController ,View,StoreSubscriber {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainStore.subscribe(self)
+        
         
         tableView = UITableView.init(frame: view.bounds, style: .grouped)
         tableView.register(AITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -60,15 +60,14 @@ class TwoViewController: UIViewController ,View,StoreSubscriber {
         }).disposed(by: disposeBag)
         
         self.rx.viewWillAppear.map { (_) -> TwoPresenter.Action in
-            return .callloaddata
+            return TwoPresenter.Action.init(reuslt: .loading)
         }.bind(to: reactor.action)
         .disposed(by: disposeBag)
         //state-->View
         reactor.state.bind(to: tableView.rx.items(dataSource: self.dataSource))
         .disposed(by: disposeBag)
+        
+        reactor.loadSuccess.bind(to: reactor.action).disposed(by: disposeBag)
     }
-    
-    func newState(state: AppState) {
-        print("count ==\(state.sectionList.count)")
-    }
+
 }
