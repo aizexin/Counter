@@ -17,7 +17,7 @@ class AITwoRemoteSeverice: NSObject {
             let cellModel3  = AICellModel(content: "3333")
             
             let listArray : [AISectionModel]   = [
-                AISectionModel(name: "1", content: "xxxxxx", cellList: [cellModel1,cellModel1,cellModel1]),
+                AISectionModel(name: "1", content: "xxxxxx", cellList: [cellModel1]),
                 AISectionModel(name: "2", content: "xxxxxx", cellList: [cellModel2]),
                 AISectionModel(name: "3", content: "xxxxxx", cellList: [cellModel3])
             ]

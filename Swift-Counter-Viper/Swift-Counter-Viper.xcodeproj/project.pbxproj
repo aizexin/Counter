@@ -35,6 +35,7 @@
 		45D500962179F4BF0028A8F1 /* TwoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500952179F4BF0028A8F1 /* TwoReducer.swift */; };
 		45D500992179F6B40028A8F1 /* TwoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500982179F6B40028A8F1 /* TwoAction.swift */; };
 		45D5009B2179FB400028A8F1 /* CommentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5009A2179FB400028A8F1 /* CommentAction.swift */; };
+		45D5009D217B096D0028A8F1 /* TwoCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5009C217B096D0028A8F1 /* TwoCellReactor.swift */; };
 		F56E6AA140A6C7D877B08641 /* Pods_Swift_Counter_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		45D500952179F4BF0028A8F1 /* TwoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoReducer.swift; sourceTree = "<group>"; };
 		45D500982179F6B40028A8F1 /* TwoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAction.swift; sourceTree = "<group>"; };
 		45D5009A2179FB400028A8F1 /* CommentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAction.swift; sourceTree = "<group>"; };
+		45D5009C217B096D0028A8F1 /* TwoCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCellReactor.swift; sourceTree = "<group>"; };
 		96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Counter_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F386AB513DF2A517700B9E1 /* Pods-Swift-Counter-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Counter-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Counter-Viper/Pods-Swift-Counter-Viper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +271,7 @@
 			children = (
 				45D5007D216090E10028A8F1 /* TwoPresenter.swift */,
 				45D5008B2179DB870028A8F1 /* TwoPresenterProtocol.swift */,
+				45D5009C217B096D0028A8F1 /* TwoCellReactor.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				45D50065215CA7B80028A8F1 /* Interactor.swift in Sources */,
 				45D50069215CA7C80028A8F1 /* Route.swift in Sources */,
 				45D5006D215CA8110028A8F1 /* PresenterProtocol.swift in Sources */,
+				45D5009D217B096D0028A8F1 /* TwoCellReactor.swift in Sources */,
 				45D5008A2160AB720028A8F1 /* AITableViewCell.swift in Sources */,
 				45D500962179F4BF0028A8F1 /* TwoReducer.swift in Sources */,
 				45D500822160910D0028A8F1 /* TwoRoute.swift in Sources */,

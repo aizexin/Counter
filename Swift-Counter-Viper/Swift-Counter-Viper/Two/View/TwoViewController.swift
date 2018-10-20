@@ -26,11 +26,14 @@ class TwoViewController: UIViewController ,View {
     var sections   = PublishSubject<[AISectionModel]>()
     
     let dataSource = RxTableViewSectionedReloadDataSource<AISectionModel> (configureCell: { (_, tableView, indexpath, cellModel) -> UITableViewCell in
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:"cell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier:"cell") as? AITableViewCell else {
             print("======")
             return AITableViewCell()
         }
-        cell.textLabel?.text = cellModel.content
+        cell.indexPath = indexpath
+//        cell.textLabel?.text = cellModel.content
+        let reactor = TwoCellReactor(model: cellModel)
+        cell.reactor = reactor
         return cell
     })
     

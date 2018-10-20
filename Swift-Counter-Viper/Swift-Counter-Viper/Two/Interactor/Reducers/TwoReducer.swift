@@ -22,6 +22,11 @@ func twoReducer(action: Action, state: AppState?) -> AppState {
             break
         case .failure(_): break
         }
+    case let action as OnClickCellAction:
+        var section = stateM.sectionList[action.indexPath.section]
+        section.items[action.indexPath.row] = action.cellModel
+//        stateM.sectionList[action.indexPath.section] = section
+        break
     default:
         break
     }
