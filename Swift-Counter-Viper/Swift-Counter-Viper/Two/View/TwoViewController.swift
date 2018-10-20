@@ -60,14 +60,15 @@ class TwoViewController: UIViewController ,View {
         }).disposed(by: disposeBag)
         
         self.rx.viewWillAppear.map { (_) -> TwoPresenter.Action in
-            return TwoPresenter.Action.init(reuslt: .loading)
+            return .callloaddata//TwoPresenter.Action.init(reuslt: .loading)
         }.bind(to: reactor.action)
         .disposed(by: disposeBag)
         //state-->View
         reactor.state.bind(to: tableView.rx.items(dataSource: self.dataSource))
         .disposed(by: disposeBag)
         
-        reactor.loadSuccess.bind(to: reactor.action).disposed(by: disposeBag)
+        reactor.loadSuccess.subscribe(onNext: { (_) in
+            print("请求结束")
+        }).disposed(by: disposeBag)
     }
-
 }

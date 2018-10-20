@@ -17,18 +17,14 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
     var initialState: [AISectionModel]
     typealias Action = TwoAction
     typealias State = [AISectionModel]
-    
     let loadSuccess = PublishSubject<TwoAction>()
-    
     let dispose = DisposeBag()
-//    enum TwoAction {
-//        case callloaddata
-//        case loadDataSuccess(list: [AISectionModel])
-//    }
-    struct TwoAction {
-        let reuslt :APIRequest<[AISectionModel]>
-    }
     
+    enum TwoAction {
+        case callloaddata
+        case loadDataSuccess(list: [AISectionModel])
+    }
+
     override init() {
         self.initialState = [AISectionModel]()
         super.init()
@@ -40,14 +36,11 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
     func reduce(state: [AISectionModel], mutation: TwoPresenter.TwoAction) -> [AISectionModel] {
         var state = state
         
-        switch mutation.reuslt {
-        case .loading:
+        switch mutation {
+        case .callloaddata:
             AITwoRemoteSeverice.loadData()
-            break
-        case .success(let list):
+        case .loadDataSuccess(let list):
             state = list
-            break
-        case .failure(_):
             break
         }
         return state
@@ -57,9 +50,8 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor,StoreSubscriber {
     func newState(state: AppState) {
         print("count ==\(state.sectionList.count)")
         if state.sectionList.count > 0 {
-            loadSuccess.onNext(TwoAction(reuslt: .success(state.sectionList)))
+            loadSuccess.onNext(.loadDataSuccess(list: state.sectionList))
         }
     }
-    
 }
 
