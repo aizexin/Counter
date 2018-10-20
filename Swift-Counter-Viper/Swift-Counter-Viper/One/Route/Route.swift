@@ -10,9 +10,11 @@ import UIKit
 
 class Route: NSObject,RouteProtocol {
     func presntenTwo(fromVC: UIViewController) {
+        let presenter = TwoPresenter()
+        let interactor = TwoInteractor(presenter: presenter)
+        presenter.interactor = interactor
         let twoVC = TwoViewController()
-//        let presenter = TwoPresenter()
-//        twoVC.reactor = presenter
+        twoVC.presenter = presenter
         fromVC.present(twoVC, animated: true, completion: nil)
     }
     
