@@ -12,7 +12,7 @@ import RxSwift
 import ReactorKit
 import RxDataSources
 import RxViewController
-import ReSwift
+
 typealias ListModel = SectionModel<AISectionModel,AICellModel>
 class TwoViewController: UIViewController ,View {
     
@@ -46,8 +46,15 @@ class TwoViewController: UIViewController ,View {
         })
         view.addSubview(disMissButton)
         
+        presenter        = TwoPresenter()
+        let interactor   = TwoInteractor(presenter: presenter)
+        presenter.interactor = interactor
         
         self.reactor = self.presenter
+    }
+    
+    deinit {
+        print("=TWOVC--deinit===========")
     }
     
     func bind(reactor: TwoPresenter) {

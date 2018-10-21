@@ -13,7 +13,6 @@ import ReSwift
 
 class TwoInteractor: NSObject ,StoreSubscriber{
     
-    let loadSuccess = PublishSubject<TwoPresenter.Action>()
     weak var presnter : TwoPresenter!
     let dispose = DisposeBag()
     
@@ -24,10 +23,9 @@ class TwoInteractor: NSObject ,StoreSubscriber{
     convenience init(presenter:TwoPresenter) {
         self.init()
         self.presnter = presenter
+
         mainStore.subscribe(self)
-        loadSuccess
-            .bind(to: presnter.action)
-            .disposed(by: dispose)
+  
     }
     deinit {
         mainStore.unsubscribe(self)
@@ -35,9 +33,10 @@ class TwoInteractor: NSObject ,StoreSubscriber{
     //想办法在newstate中调用Presnter的action
     func newState(state: AppState) {
         print("count ==\(state.sectionList.count)")
-        if state.sectionList.count > 0 {
-            loadSuccess.onNext(.loadDataSuccess(list: state.sectionList))
-        }
+       presnter.action.onNext(.loadDataSuccess(list: state.sectionList))
+//        if state.sectionList.count > 0 {
+//            loadSuccess.onNext(.loadDataSuccess(list: state.sectionList))
+//        }
     }
     
     func loadData() {

@@ -16,11 +16,16 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor {
     
     var initialState: [AISectionModel]
     typealias Action = TwoAction
+    typealias Mutation = TwoMutation
     typealias State  = [AISectionModel]
     var interactor   : TwoInteractor!
-        
+    
     enum TwoAction {
         case callloaddata
+        case loadDataSuccess(list: [AISectionModel])
+    }
+    
+    enum TwoMutation {
         case loadDataSuccess(list: [AISectionModel])
     }
 
@@ -28,13 +33,21 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor {
         self.initialState = [AISectionModel]()
         super.init()
     }
+    
+    func mutate(action: TwoPresenter.TwoAction) -> Observable<TwoPresenter.Mutation> {
+        switch action {
+        case .callloaddata:
+            interactor.loadData()
+            break
+        case .loadDataSuccess(let list):
+            return Observable.concat([Observable.just(TwoMutation.loadDataSuccess(list: list))])
+        }
+        return Observable.empty()
+    }
 
-    func reduce(state: [AISectionModel], mutation: TwoPresenter.TwoAction) -> [AISectionModel] {
+    func reduce(state: [AISectionModel], mutation: TwoPresenter.Mutation) -> [AISectionModel] {
         var state = state
         switch mutation {
-        case .callloaddata:
-            //这里用route添加HUD
-            interactor.loadData()
         case .loadDataSuccess(let list):
             //route 隐藏HUD
             state = list
