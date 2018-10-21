@@ -27,6 +27,7 @@ class TwoViewController: UIViewController ,View {
             return AITableViewCell()
         }
         cell.indexPath = indexpath
+        //TODO:这里不需要传cellModel 只需要传cellModel的id，让reactor自己在初始化的时候去找数据
         let reactor = TwoCellReactor(model: cellModel)
         cell.reactor = reactor
         return cell

@@ -41,17 +41,4 @@ class TwoCellReactor: NSObject,Reactor {
         }
         return Observable.empty()
     }
-//
-//    func reduce(state: AICellModel, mutation: TwoCellReactor.CellAction) -> AICellModel {
-////        var state = state
-//        switch mutation {
-//        case let .onClick(indexpath):
-//            state.content = "I AM CHANGE"
-//            mainStore.dispatch(OnClickCellAction(dbCommentid: indexpath.row + 1))
-//            break
-//        case .noAction:
-//            break
-//        }
-//        return state
-//    }
 }

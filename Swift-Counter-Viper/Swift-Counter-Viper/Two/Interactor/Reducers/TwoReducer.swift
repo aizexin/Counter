@@ -25,9 +25,6 @@ func twoReducer(action: Action, state: AppState?) -> AppState {
         }
     case let onClickCell as OnClickCellAction:
         stateM.cellCommentState.commentDict[onClickCell.dbCommentid]?.content = "i am change"
-        
-//        var section = stateM.sectionList[action.indexPath.section]
-//        section.items[action.indexPath.row] = action.cellModel
         break
     default:
         break
@@ -41,7 +38,6 @@ func flatenSectionList(list: [OriginalSectionModel], state:AppState) -> AppState
     for sectionModel in list {
         let contentModel = DBContentModel(id: sectionModel.contentId, text: sectionModel.content, userId: sectionModel.userId)
         //存入内容字典
-//        var contentList  = state.contentState.contentList
         state.contentState.contentList[contentModel.contentID] = contentModel
         //存入user字典
         let userModel = DBUserModel(name: sectionModel.name, userID: sectionModel.userId)
