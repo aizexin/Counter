@@ -15,7 +15,6 @@ class TwoCellReactor: NSObject,Reactor {
     var initialState: AICellModel
     
     typealias Action = CellAction
-    
     typealias State = AICellModel
     
     enum CellAction {
@@ -32,16 +31,27 @@ class TwoCellReactor: NSObject,Reactor {
         self.initialState = model
     }
     
-    func reduce(state: AICellModel, mutation: TwoCellReactor.CellAction) -> AICellModel {
-//        var state = state
-        switch mutation {
+    func mutate(action: TwoCellReactor.CellAction) -> Observable<TwoCellReactor.CellAction> {
+        switch action {
         case let .onClick(indexpath):
-            state.content = "I AM CHANGE"
-            mainStore.dispatch(OnClickCellAction(indexPath: indexpath,cellModel: state))
+            mainStore.dispatch(OnClickCellAction(dbCommentid: indexpath.section + 1))
             break
         case .noAction:
             break
         }
-        return state
+        return Observable.empty()
     }
+//
+//    func reduce(state: AICellModel, mutation: TwoCellReactor.CellAction) -> AICellModel {
+////        var state = state
+//        switch mutation {
+//        case let .onClick(indexpath):
+//            state.content = "I AM CHANGE"
+//            mainStore.dispatch(OnClickCellAction(dbCommentid: indexpath.row + 1))
+//            break
+//        case .noAction:
+//            break
+//        }
+//        return state
+//    }
 }

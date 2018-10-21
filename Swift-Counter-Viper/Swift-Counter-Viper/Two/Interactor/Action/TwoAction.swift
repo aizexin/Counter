@@ -13,6 +13,5 @@ struct TwoLoadDataAction: Action {
     let result : APIRequest<[OriginalSectionModel]>
 }
 struct OnClickCellAction: Action {
-    let indexPath : IndexPath
-    let cellModel : AICellModel
+    let dbCommentid :Int
 }

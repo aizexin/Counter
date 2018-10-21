@@ -16,7 +16,6 @@ func twoReducer(action: Action, state: AppState?) -> AppState {
         switch twoAction.result {
         case let .success(list):
             //TODO:拆分数据，扁平
-//            stateM.sectionList = list
             stateM = flatenSectionList(list: list, state: stateM)
             break
         case .loading:
@@ -24,7 +23,9 @@ func twoReducer(action: Action, state: AppState?) -> AppState {
             break
         case .failure(_): break
         }
-    case let action as OnClickCellAction:
+    case let onClickCell as OnClickCellAction:
+        stateM.cellCommentState.commentDict[onClickCell.dbCommentid]?.content = "i am change"
+        
 //        var section = stateM.sectionList[action.indexPath.section]
 //        section.items[action.indexPath.row] = action.cellModel
         break
