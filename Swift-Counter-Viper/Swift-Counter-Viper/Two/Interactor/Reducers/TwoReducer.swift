@@ -15,7 +15,9 @@ func twoReducer(action: Action, state: AppState?) -> AppState {
     case let twoAction as TwoLoadDataAction:
         switch twoAction.result {
         case let .success(list):
-            stateM.sectionList = list
+            //TODO:拆分数据，扁平
+//            stateM.sectionList = list
+            stateM = flatenSectionList(list: list, state: stateM)
             break
         case .loading:
             print("loading......")
@@ -23,11 +25,37 @@ func twoReducer(action: Action, state: AppState?) -> AppState {
         case .failure(_): break
         }
     case let action as OnClickCellAction:
-        var section = stateM.sectionList[action.indexPath.section]
-        section.items[action.indexPath.row] = action.cellModel
+//        var section = stateM.sectionList[action.indexPath.section]
+//        section.items[action.indexPath.row] = action.cellModel
         break
     default:
         break
     }
     return stateM
+}
+///把数据压扁
+func flatenSectionList(list: [OriginalSectionModel], state:AppState) -> AppState {
+    var state = state
+    var flatenList = [DBContentModel]()
+    for sectionModel in list {
+        let contentModel = DBContentModel(id: sectionModel.contentId, text: sectionModel.content, userId: sectionModel.userId)
+        //存入内容字典
+//        var contentList  = state.contentState.contentList
+        state.contentState.contentList[contentModel.contentID] = contentModel
+        //存入user字典
+        let userModel = DBUserModel(name: sectionModel.name, userID: sectionModel.userId)
+        state.userState.userList[userModel.userID] = userModel
+        //cell回复字典
+        var flatenCellList = [Int]()
+        for commentModel in sectionModel.items {
+            flatenCellList.append(commentModel.commentID)
+            let dbcellModel = DBCellModel(id: commentModel.commentID, content: commentModel.commentContent)
+            state.cellCommentState.commentDict[dbcellModel.id] = dbcellModel
+        }
+        contentModel.cellIdList = flatenCellList
+        //cont
+        flatenList.append(contentModel)
+    }
+    state.flatenList = flatenList
+    return state
 }

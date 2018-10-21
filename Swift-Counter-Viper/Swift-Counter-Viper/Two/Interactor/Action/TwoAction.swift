@@ -10,7 +10,7 @@ import UIKit
 import ReSwift
 
 struct TwoLoadDataAction: Action {
-    let result : APIRequest<[AISectionModel]>
+    let result : APIRequest<[OriginalSectionModel]>
 }
 struct OnClickCellAction: Action {
     let indexPath : IndexPath

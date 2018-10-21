@@ -36,6 +36,14 @@
 		45D500992179F6B40028A8F1 /* TwoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500982179F6B40028A8F1 /* TwoAction.swift */; };
 		45D5009B2179FB400028A8F1 /* CommentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5009A2179FB400028A8F1 /* CommentAction.swift */; };
 		45D5009D217B096D0028A8F1 /* TwoCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5009C217B096D0028A8F1 /* TwoCellReactor.swift */; };
+		45D5009F217C677C0028A8F1 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5009E217C677C0028A8F1 /* UserState.swift */; };
+		45D500A1217C68EF0028A8F1 /* ContentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500A0217C68EF0028A8F1 /* ContentState.swift */; };
+		45D500A4217C79120028A8F1 /* DBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500A3217C79120028A8F1 /* DBUserModel.swift */; };
+		45D500A6217C791C0028A8F1 /* DBContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500A5217C791C0028A8F1 /* DBContentModel.swift */; };
+		45D500A8217C7F940028A8F1 /* OrignialSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500A7217C7F940028A8F1 /* OrignialSectionModel.swift */; };
+		45D500AA217C80720028A8F1 /* OriginalCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500A9217C80720028A8F1 /* OriginalCommentModel.swift */; };
+		45D500AC217C81320028A8F1 /* DBCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500AB217C81320028A8F1 /* DBCellModel.swift */; };
+		45D500AE217C9E320028A8F1 /* CellCommentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500AD217C9E320028A8F1 /* CellCommentState.swift */; };
 		F56E6AA140A6C7D877B08641 /* Pods_Swift_Counter_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +101,14 @@
 		45D500982179F6B40028A8F1 /* TwoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAction.swift; sourceTree = "<group>"; };
 		45D5009A2179FB400028A8F1 /* CommentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAction.swift; sourceTree = "<group>"; };
 		45D5009C217B096D0028A8F1 /* TwoCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCellReactor.swift; sourceTree = "<group>"; };
+		45D5009E217C677C0028A8F1 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		45D500A0217C68EF0028A8F1 /* ContentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentState.swift; sourceTree = "<group>"; };
+		45D500A3217C79120028A8F1 /* DBUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUserModel.swift; sourceTree = "<group>"; };
+		45D500A5217C791C0028A8F1 /* DBContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentModel.swift; sourceTree = "<group>"; };
+		45D500A7217C7F940028A8F1 /* OrignialSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrignialSectionModel.swift; sourceTree = "<group>"; };
+		45D500A9217C80720028A8F1 /* OriginalCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalCommentModel.swift; sourceTree = "<group>"; };
+		45D500AB217C81320028A8F1 /* DBCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCellModel.swift; sourceTree = "<group>"; };
+		45D500AD217C9E320028A8F1 /* CellCommentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCommentState.swift; sourceTree = "<group>"; };
 		96FD771CFDAE080715AB73EB /* Pods_Swift_Counter_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Counter_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F386AB513DF2A517700B9E1 /* Pods-Swift-Counter-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-Counter-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-Counter-Viper/Pods-Swift-Counter-Viper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -256,6 +272,7 @@
 		45D50075216090670028A8F1 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				45D500A2217C78F60028A8F1 /* DBModel */,
 				45D500972179F69E0028A8F1 /* Action */,
 				45D500942179F4960028A8F1 /* Reducers */,
 				45D500912179F4190028A8F1 /* State */,
@@ -305,6 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				45D5008F2179DE030028A8F1 /* AITwoRemoteSeverice.swift */,
+				45D500A7217C7F940028A8F1 /* OrignialSectionModel.swift */,
+				45D500A9217C80720028A8F1 /* OriginalCommentModel.swift */,
 			);
 			path = NewWork;
 			sourceTree = "<group>";
@@ -313,6 +332,9 @@
 			isa = PBXGroup;
 			children = (
 				45D500922179F42D0028A8F1 /* AppState.swift */,
+				45D5009E217C677C0028A8F1 /* UserState.swift */,
+				45D500A0217C68EF0028A8F1 /* ContentState.swift */,
+				45D500AD217C9E320028A8F1 /* CellCommentState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -332,6 +354,16 @@
 				45D5009A2179FB400028A8F1 /* CommentAction.swift */,
 			);
 			path = Action;
+			sourceTree = "<group>";
+		};
+		45D500A2217C78F60028A8F1 /* DBModel */ = {
+			isa = PBXGroup;
+			children = (
+				45D500A3217C79120028A8F1 /* DBUserModel.swift */,
+				45D500A5217C791C0028A8F1 /* DBContentModel.swift */,
+				45D500AB217C81320028A8F1 /* DBCellModel.swift */,
+			);
+			path = DBModel;
 			sourceTree = "<group>";
 		};
 		9CCAA5097151F6E0B7870E12 /* Frameworks */ = {
@@ -540,8 +572,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D50032215C7DF00028A8F1 /* ViewController.swift in Sources */,
+				45D500A1217C68EF0028A8F1 /* ContentState.swift in Sources */,
+				45D5009F217C677C0028A8F1 /* UserState.swift in Sources */,
 				45D50080216090EF0028A8F1 /* TwoEntity.swift in Sources */,
 				45D5007C216090D00028A8F1 /* TwoInteractor.swift in Sources */,
+				45D500AE217C9E320028A8F1 /* CellCommentState.swift in Sources */,
 				45D500862160AA6F0028A8F1 /* AISectionModel.swift in Sources */,
 				45D50071215CA8EF0028A8F1 /* RouteProtocol.swift in Sources */,
 				45D5007E216090E10028A8F1 /* TwoPresenter.swift in Sources */,
@@ -553,14 +588,19 @@
 				45D500962179F4BF0028A8F1 /* TwoReducer.swift in Sources */,
 				45D500822160910D0028A8F1 /* TwoRoute.swift in Sources */,
 				45D500932179F42D0028A8F1 /* AppState.swift in Sources */,
+				45D500AA217C80720028A8F1 /* OriginalCommentModel.swift in Sources */,
 				45D5007A216090BD0028A8F1 /* TwoViewController.swift in Sources */,
+				45D500A6217C791C0028A8F1 /* DBContentModel.swift in Sources */,
 				45D5008C2179DB870028A8F1 /* TwoPresenterProtocol.swift in Sources */,
+				45D500A8217C7F940028A8F1 /* OrignialSectionModel.swift in Sources */,
 				45D500902179DE030028A8F1 /* AITwoRemoteSeverice.swift in Sources */,
 				45D5006F215CA8300028A8F1 /* InteractorProtocol.swift in Sources */,
 				45D5006B215CA7DB0028A8F1 /* ViewProtocol.swift in Sources */,
+				45D500AC217C81320028A8F1 /* DBCellModel.swift in Sources */,
 				45D50030215C7DF00028A8F1 /* AppDelegate.swift in Sources */,
 				45D50067215CA7C20028A8F1 /* Presenter.swift in Sources */,
 				45D500992179F6B40028A8F1 /* TwoAction.swift in Sources */,
+				45D500A4217C79120028A8F1 /* DBUserModel.swift in Sources */,
 				45D5009B2179FB400028A8F1 /* CommentAction.swift in Sources */,
 				45D500882160AA780028A8F1 /* AICellModel.swift in Sources */,
 			);

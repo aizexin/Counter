@@ -9,5 +9,9 @@
 import UIKit
 import ReSwift
 struct AppState: StateType {
-    var sectionList = [AISectionModel]()
+//    var sectionList = [AISectionModel]()
+    var flatenList   = [DBContentModel]()
+    var userState    : UserState = UserState()
+    var contentState : ContentState = ContentState()
+    var cellCommentState : CellCommentState = CellCommentState()
 }

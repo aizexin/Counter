@@ -12,14 +12,15 @@ class AITwoRemoteSeverice: NSObject {
     class func loadData() {
         mainStore.dispatch(TwoLoadDataAction(result: .loading))
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let cellModel1  = AICellModel(content: "1111")
-            let cellModel2  = AICellModel(content: "2222")
-            let cellModel3  = AICellModel(content: "3333")
+            let cellModel1  = OriginalCommentModel(id: 1, content: "xxxxx1")
+            let cellModel2  = OriginalCommentModel(id: 2, content: "xxxxx2")
+            let cellModel3  = OriginalCommentModel(id: 3, content: "xxxxx3")
             
-            let listArray : [AISectionModel]   = [
-                AISectionModel(name: "1", content: "xxxxxx", cellList: [cellModel1]),
-                AISectionModel(name: "2", content: "xxxxxx", cellList: [cellModel2]),
-                AISectionModel(name: "3", content: "xxxxxx", cellList: [cellModel3])
+            let listArray : [OriginalSectionModel]   = [
+                
+                OriginalSectionModel(name: "section1", content: "aaaaa", cellList: [cellModel1], userID: 1, contentID: 1),
+                OriginalSectionModel(name: "section2", content: "bbbbb", cellList: [cellModel2], userID: 2, contentID: 2),
+                OriginalSectionModel(name: "section3", content: "ccccc", cellList: [cellModel3], userID: 3, contentID: 3)
             ]
             mainStore.dispatch(TwoLoadDataAction(result: .success(listArray)))
         }
