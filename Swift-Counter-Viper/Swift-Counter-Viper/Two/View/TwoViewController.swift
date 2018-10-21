@@ -13,7 +13,6 @@ import ReactorKit
 import RxDataSources
 import RxViewController
 
-typealias ListModel = SectionModel<AISectionModel,AICellModel>
 class TwoViewController: UIViewController ,View {
     
     typealias Reactor = TwoPresenter
@@ -21,14 +20,13 @@ class TwoViewController: UIViewController ,View {
     var disMissButton: UIButton!
     var tableView    : UITableView!
     var presenter    : TwoPresenter!
-    let dataSource = RxTableViewSectionedReloadDataSource<AISectionModel> (configureCell: { (_, tableView, indexpath, cellModel) -> UITableViewCell in
+    let dataSource = RxTableViewSectionedReloadDataSource<DBContentModel> (configureCell: { (_, tableView, indexpath, commentId) -> UITableViewCell in
         guard let cell = tableView.dequeueReusableCell(withIdentifier:"cell") as? AITableViewCell else {
             print("======")
             return AITableViewCell()
         }
         cell.indexPath = indexpath
-        //TODO:这里不需要传cellModel 只需要传cellModel的id，让reactor自己在初始化的时候去找数据
-        let reactor = TwoCellReactor(model: cellModel)
+        let reactor = TwoCellReactor(commentId: commentId)
         cell.reactor = reactor
         return cell
     })
@@ -69,7 +67,7 @@ class TwoViewController: UIViewController ,View {
         
         self.rx.viewWillAppear
             .map { (_) -> TwoPresenter.Action in
-                return .callloaddata//TwoPresenter.Action.init(reuslt: .loading)
+                return .callloaddata
             }.bind(to: reactor.action)
             .disposed(by: disposeBag)
         //state-->View

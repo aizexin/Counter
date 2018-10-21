@@ -7,15 +7,12 @@
 //
 
 import UIKit
-
+//TODO: 这里应该写到reactor里面，属于presenter
 class AICellModel: NSObject {
     var content: String!
-    var userName: String!
-    var userID  : Int!
-    convenience init(content: String,userName: String = "", userID :Int = 0) {
+
+    convenience init(content: String) {
         self.init()
         self.content = content
-        self.userName = userName
-        self.userID  = userID
     }
 }

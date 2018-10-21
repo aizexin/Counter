@@ -26,9 +26,10 @@ class TwoCellReactor: NSObject,Reactor {
         self.initialState  = AICellModel()
         super.init()
     }
-    convenience init(model: AICellModel) {
+    convenience init(commentId: Int) {
         self.init()
-        self.initialState = model
+        let dbModel :DBCellModel = mainStore.state.cellCommentState.commentDict[commentId] ?? DBCellModel()
+        self.initialState = AICellModel(content: dbModel.content)
     }
     
     func mutate(action: TwoCellReactor.CellAction) -> Observable<TwoCellReactor.CellAction> {

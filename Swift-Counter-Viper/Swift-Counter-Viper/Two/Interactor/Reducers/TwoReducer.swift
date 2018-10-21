@@ -49,7 +49,7 @@ func flatenSectionList(list: [OriginalSectionModel], state:AppState) -> AppState
             let dbcellModel = DBCellModel(id: commentModel.commentID, content: commentModel.commentContent)
             state.cellCommentState.commentDict[dbcellModel.id] = dbcellModel
         }
-        contentModel.cellIdList = flatenCellList
+        contentModel.items = flatenCellList
         //cont
         flatenList.append(contentModel)
     }

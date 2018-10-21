@@ -26,7 +26,6 @@
 		45D5007E216090E10028A8F1 /* TwoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5007D216090E10028A8F1 /* TwoPresenter.swift */; };
 		45D50080216090EF0028A8F1 /* TwoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5007F216090EF0028A8F1 /* TwoEntity.swift */; };
 		45D500822160910D0028A8F1 /* TwoRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500812160910D0028A8F1 /* TwoRoute.swift */; };
-		45D500862160AA6F0028A8F1 /* AISectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500852160AA6F0028A8F1 /* AISectionModel.swift */; };
 		45D500882160AA780028A8F1 /* AICellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500872160AA780028A8F1 /* AICellModel.swift */; };
 		45D5008A2160AB720028A8F1 /* AITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D500892160AB720028A8F1 /* AITableViewCell.swift */; };
 		45D5008C2179DB870028A8F1 /* TwoPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5008B2179DB870028A8F1 /* TwoPresenterProtocol.swift */; };
@@ -91,7 +90,6 @@
 		45D5007D216090E10028A8F1 /* TwoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPresenter.swift; sourceTree = "<group>"; };
 		45D5007F216090EF0028A8F1 /* TwoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEntity.swift; sourceTree = "<group>"; };
 		45D500812160910D0028A8F1 /* TwoRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRoute.swift; sourceTree = "<group>"; };
-		45D500852160AA6F0028A8F1 /* AISectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISectionModel.swift; sourceTree = "<group>"; };
 		45D500872160AA780028A8F1 /* AICellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICellModel.swift; sourceTree = "<group>"; };
 		45D500892160AB720028A8F1 /* AITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITableViewCell.swift; sourceTree = "<group>"; };
 		45D5008B2179DB870028A8F1 /* TwoPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 		45D5008D2179DC3F0028A8F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				45D500852160AA6F0028A8F1 /* AISectionModel.swift */,
 				45D500872160AA780028A8F1 /* AICellModel.swift */,
 			);
 			path = ViewModel;
@@ -577,7 +574,6 @@
 				45D50080216090EF0028A8F1 /* TwoEntity.swift in Sources */,
 				45D5007C216090D00028A8F1 /* TwoInteractor.swift in Sources */,
 				45D500AE217C9E320028A8F1 /* CellCommentState.swift in Sources */,
-				45D500862160AA6F0028A8F1 /* AISectionModel.swift in Sources */,
 				45D50071215CA8EF0028A8F1 /* RouteProtocol.swift in Sources */,
 				45D5007E216090E10028A8F1 /* TwoPresenter.swift in Sources */,
 				45D50065215CA7B80028A8F1 /* Interactor.swift in Sources */,

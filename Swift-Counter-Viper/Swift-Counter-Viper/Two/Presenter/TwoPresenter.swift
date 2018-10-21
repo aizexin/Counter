@@ -14,23 +14,23 @@ import ReSwift
 
 class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor {
     
-    var initialState: [AISectionModel]
+    var initialState: [DBContentModel]
     typealias Action = TwoAction
     typealias Mutation = TwoMutation
-    typealias State  = [AISectionModel]
+    typealias State  = [DBContentModel]
     var interactor   : TwoInteractor!
     
     enum TwoAction {
         case callloaddata
-        case loadDataSuccess(list: [AISectionModel])
+        case loadDataSuccess(list: [DBContentModel])
     }
     
     enum TwoMutation {
-        case loadDataSuccess(list: [AISectionModel])
+        case loadDataSuccess(list: [DBContentModel])
     }
 
     override init() {
-        self.initialState = [AISectionModel]()
+        self.initialState = [DBContentModel]()
         super.init()
     }
     
@@ -45,7 +45,7 @@ class TwoPresenter: NSObject,TwoPresenterProtocol,Reactor {
         return Observable.empty()
     }
 
-    func reduce(state: [AISectionModel], mutation: TwoPresenter.Mutation) -> [AISectionModel] {
+    func reduce(state: [DBContentModel], mutation: TwoPresenter.Mutation) -> [DBContentModel] {
         var state = state
         switch mutation {
         case .loadDataSuccess(let list):
