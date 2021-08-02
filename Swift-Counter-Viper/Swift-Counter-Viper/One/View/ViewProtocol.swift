@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol ViewProtocol: class {
+/// view interface invoke by presenter  
+protocol ViewProtocol: AnyObject {
     
     func getincreaseTap() -> ControlEvent<Void>?
     func getLabelText() -> Binder<String?>?

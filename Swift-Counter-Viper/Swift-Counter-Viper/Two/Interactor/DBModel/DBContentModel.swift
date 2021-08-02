@@ -8,9 +8,8 @@
 
 import UIKit
 import ReSwift
-import RxDataSources
 
-class DBContentModel: NSObject,StateType,SectionModelType {
+class DBContentModel: NSObject,StateType {
     required convenience init(original: DBContentModel, items: [Int]) {
         self.init()
         self.items = items

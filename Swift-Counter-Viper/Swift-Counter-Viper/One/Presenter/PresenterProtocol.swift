@@ -8,7 +8,7 @@
 
 import UIKit
 import ReactorKit
-protocol PresenterProtocol: class {
+protocol PresenterProtocol: AnyObject {
     func setReactor<T>(reactor :T)
     func presntenTwo() -> Void
 }

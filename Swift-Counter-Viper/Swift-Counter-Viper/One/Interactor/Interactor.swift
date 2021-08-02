@@ -20,7 +20,6 @@ class Interactor: NSObject,InteractorProtocol, Reactor {
     enum Action {
         case increase
         case decrease
-        
     }
     
     //操作数据的 应该分在interactor

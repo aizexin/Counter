@@ -10,8 +10,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 import ReactorKit
-import RxDataSources
-import RxViewController
 
 class TwoViewController: UIViewController ,View {
     
@@ -20,16 +18,16 @@ class TwoViewController: UIViewController ,View {
     var disMissButton: UIButton!
     var tableView    : UITableView!
     var presenter    : TwoPresenter!
-    let dataSource = RxTableViewSectionedReloadDataSource<DBContentModel> (configureCell: { (_, tableView, indexpath, commentId) -> UITableViewCell in
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:"cell") as? AITableViewCell else {
-            print("======")
-            return AITableViewCell()
-        }
-        cell.indexPath = indexpath
-        let reactor = TwoCellReactor(commentId: commentId)
-        cell.reactor = reactor
-        return cell
-    })
+//    let dataSource = RxTableViewSectionedReloadDataSource<DBContentModel> (configureCell: { (_, tableView, indexpath, commentId) -> UITableViewCell in
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier:"cell") as? AITableViewCell else {
+//            print("======")
+//            return AITableViewCell()
+//        }
+//        cell.indexPath = indexpath
+//        let reactor = TwoCellReactor(commentId: commentId)
+//        cell.reactor = reactor
+//        return cell
+//    })
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,14 +63,14 @@ class TwoViewController: UIViewController ,View {
                 self.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
         
-        self.rx.viewWillAppear
-            .map { (_) -> TwoPresenter.Action in
-                return .callloaddata
-            }.bind(to: reactor.action)
-            .disposed(by: disposeBag)
+//        self.rx.viewWillAppear
+//            .map { (_) -> TwoPresenter.Action in
+//                return .callloaddata
+//            }.bind(to: reactor.action)
+//            .disposed(by: disposeBag)
         //state-->View
-        reactor.state
-            .bind(to: tableView.rx.items(dataSource: self.dataSource))
-            .disposed(by: disposeBag)
+//        reactor.state
+//            .bind(to: tableView.rx.items(dataSource: self.dataSource))
+//            .disposed(by: disposeBag)
     }
 }
