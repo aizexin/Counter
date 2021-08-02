@@ -8,20 +8,5 @@ target ‘Swift-Counter-Viper’ do
     pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'develop'
     pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'develop'
     pod 'Then'
-#    pod 'RxDataSources'
     pod 'ReSwift'
-#    pod 'RxViewController'
-end
-
-post_install do |installer|
-    # Your list of targets here.
-    myTargets = []
-    
-    installer.pods_project.targets.each do |target|
-        if myTargets.include? target.name
-            target.build_configurations.each do |config|
-                config.build_settings[‘SWIFT_VERSION’] = ‘3.2’
-            end
-        end
-    end
 end

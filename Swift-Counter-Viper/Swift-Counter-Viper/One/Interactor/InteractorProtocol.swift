@@ -9,5 +9,6 @@
 import UIKit
 
 protocol InteractorProtocol {
-    
+    /// The initial state.
+//    var initialState: State { get }
 }
